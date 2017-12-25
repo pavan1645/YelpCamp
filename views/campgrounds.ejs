@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class="container">
+	<header class="jumbotron">
+		<h1>Welcome to Campgrounds</h1>
+		<p>View our campgrounds.</p>
+		<p>
+			<a class="btn btn-primary btn-large" href="/campgrounds/new">Add new campground</a>			
+		</p>
+	</header>
+
+	<% var i = 0;%>
+	<% cgs.forEach(function(e){ if((i++)%4==0){%>
+		<div class="row">
+		<% } %>
+		<div class="col-md-3 col-sm-6">
+			<a href="/campgrounds/<%=e._id%>">
+				<div class="thumbnail">
+					<img src="<%= e.image %>">
+					<div class="caption text-center">
+						<h4><%= e.name %></h4>
+					</div>
+				</div>
+			</a>
+		</div>
+		<% if(i%4==0){ %>  </div> <%}%>
+	<% }); %>
+	
+</div>
+<a href="/">Go back to landing page</a>
+
+<% include partials/footer %>

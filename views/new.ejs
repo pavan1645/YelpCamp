@@ -1,0 +1,16 @@
+<% include partials/header %>
+
+<div class="container" style="text-align: center;">
+	<h1>New Campground</h1><br>
+	<div class="row" style="margin: 0 auto;">
+		<div class="col-sm-2 col-md-3 col-lg-4"></div>
+		<form class="col-sm-8 col-md-6 col-lg-4" action="/campgrounds" method="post">
+			<input class="form-control type="text" name="name" placeholder="Enter name of place"><br>
+			<input class="form-control" type="text" name="image" placeholder="Enter url"><br>
+			<button class="btn btn-block btn-primary">Submit</button>
+		</form>
+	</div>
+	<a href="/campgrounds">View all campgrounds</a>
+</div>
+
+<% include partials/footer %>
